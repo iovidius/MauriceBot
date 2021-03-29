@@ -7,10 +7,12 @@ import furhatos.app.questiondialogue.nlu.*
 val Start : State = state(Interaction) {
 
     onEntry {
-        furhat.ask("Hi there. Do you like robots?")
+        // TODO: I'm going to ask you n questions
+        furhat.ask("Hi there. I'm going to ask you some questions! Do you want to start?")
     }
 
     onResponse<Yes>{
+        // Go to the first question
         furhat.say("I like humans.")
     }
 
