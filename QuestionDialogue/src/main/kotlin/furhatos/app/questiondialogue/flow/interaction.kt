@@ -4,19 +4,50 @@ import furhatos.nlu.common.*
 import furhatos.flow.kotlin.*
 import furhatos.app.questiondialogue.nlu.*
 
-val Start : State = state(Interaction) {
+import Quiz
 
+
+var q = Quiz()      // new Quiz
+var i = 0           // Question index
+
+val Start : State = state(Interaction) {
     onEntry {
         // TODO: I'm going to ask you n questions
-        furhat.ask("Hi there. I'm going to ask you some questions! Do you want to start?")
+        if (q.questions.count() > 0)
+            furhat.ask(q.welcomeMessage)
+        else
+            furhat.say("No questions were specified.")
+            furhat.say(q.goodbyeMessage)
+            goto(Idle)
     }
 
     onResponse<Yes>{
+
         // Go to the first question
-        furhat.say("I like humans.")
+        var type = q.questions.get(0).type
+        
+        if(type == QuestionType.YES_NO)
+            goto(YesNoQuestion)
+        
     }
 
     onResponse<No>{
-        furhat.say("That's sad.")
+        // CLOSE
+        furhat.say(q.goodbyeMessage)
+        goto(Idle)
     }
 }
+
+val YesNoQuestion : State = state(Interaction){
+    onEntry {
+        furhat.ask(q.questions.get(i).msg)
+    }
+    onResponse<Yes> { 
+        // XX
+    }
+
+    onResponse<No> { 
+         
+    }
+}
+
