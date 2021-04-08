@@ -18,23 +18,30 @@ val Start : State = state(Interaction) {
         else
             furhat.say("No questions were specified.")
             furhat.say(q.goodbyeMessage)
-            goto(Idle)
+            terminate()
     }
 
     onResponse<Yes>{
-
-        // Go to the first question
-        var type = q.questions.get(0).type
-        
-        if(type == QuestionType.YES_NO)
-            goto(YesNoQuestion)
-        
+        goto(NextQuestion)
     }
 
     onResponse<No>{
         // CLOSE
         furhat.say(q.goodbyeMessage)
-        goto(Idle)
+        terminate()
+    }
+}
+
+// Go to next question
+val NextQuestion: State = state(Interaction){
+    onEntry{
+           // Go to the first question
+           var type = q.questions.get(i).type
+        
+           if(type == QuestionType.YES_NO)
+               goto(YesNoQuestion)
+           else if(type == QuestionType.MULTIPLE_CHOICE)
+               goto(MultipleChoiceQuestion)
     }
 }
 
@@ -44,6 +51,8 @@ val YesNoQuestion : State = state(Interaction){
     }
     onResponse<Yes> { 
         // XX
+        i++
+        goto(NextQuestion)
     }
 
     onResponse<No> { 
@@ -51,3 +60,12 @@ val YesNoQuestion : State = state(Interaction){
     }
 }
 
+val MultipleChoiceQuestion: State = state(Interaction){
+    onEntry {
+        furhat.ask(q.questions.get(i).msg)
+    }
+    onResponse<Numeric> { 
+        furhat.say("you chose " + it.intent.number)
+    }
+
+}
