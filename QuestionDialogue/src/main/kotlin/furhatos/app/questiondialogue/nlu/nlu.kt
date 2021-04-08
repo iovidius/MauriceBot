@@ -1,5 +1,6 @@
 package furhatos.app.questiondialogue.nlu
 import furhatos.nlu.common.Number
+import furhatos.nlu.common.Ordinal
 import furhatos.nlu.*
 import furhatos.util.Language
 
