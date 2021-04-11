@@ -1,6 +1,8 @@
 
 // This class represents the individual questions
-class Question (val msg: String, val type: QuestionType){
+class Question (){
+    var text: String = ""
+    var type: QuestionType = QuestionType.YES_NO
 
 }
 

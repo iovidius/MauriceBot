@@ -1,0 +1,19 @@
+{
+	"name": "Test quiz",
+	"version": "1.0",
+	"remarks": "Just for testing the software",
+	"give_results": false,
+	"questions": [
+		{
+			"text": "What is love?",
+			"type": "YES_NO"
+		},
+		{
+			"text": "What is the meaning of life?",
+			"type": "MULTIPLE_CHOICE"
+		}
+	],
+	
+	"results": []
+	
+}

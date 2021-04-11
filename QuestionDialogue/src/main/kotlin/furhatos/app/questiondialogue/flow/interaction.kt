@@ -4,33 +4,43 @@ import furhatos.nlu.common.*
 import furhatos.nlu.intent
 import furhatos.flow.kotlin.*
 import furhatos.app.questiondialogue.nlu.*
+import java.io.IOException
 
 import Quiz
 
-var q = Quiz()      // new Quiz
-var i = 0           // Question index
-
-// messages
-var n = q.questions.count()
-var welcomeMessage = "I'm going to ask you $n questions. Do you want to start?"
-var goodbyeMessage: String = "Thanks for answering all the questions. Goodbye!"
+var q : Quiz = Quiz()    // new Quiz
+var i = 0                // Question index
 
 
 val Start : State = state(Interaction) {
     onEntry {
+        
         furhat.say("Hi there! My name is Maurice.")
+
+        // load quiz
+        try{
+            q = Quiz.load("../../assets/test.json")
+        }
+         catch (ioException: IOException) {
+            ioException.printStackTrace()
+            furhat.say("There was an error loading the questions.")
+            goto(Stop)
+        }
+
 
         if (q.questions.count() == 0) {
             furhat.say("No questions were specified.")
             goto(Stop)
         }
 
-        furhat.askYN(welcomeMessage){
+        var n = q.questions.count()
+        furhat.askYN("I'm going to ask you $n questions. Do you want to start?"){
             onResponse<Yes> {
                 for (question in q.questions){
                     call(NextQuestion)
                     i++
                 }
+                goto(Stop)
             }
 
             onResponse<No> { 
@@ -45,7 +55,7 @@ val Stop: State = state(Interaction){
     onEntry {
         if (i > 0)
             furhat.say("Thanks for answering all questions!")
-        furhat.say(goodbyeMessage)
+        furhat.say("Goodbye!")
         terminate()
     }
 }
@@ -68,7 +78,7 @@ val NextQuestion: State = state(Interaction){
 
 val YesNoQuestion : State = state(Interaction){
     onEntry {
-        furhat.ask(q.questions.get(i).msg)
+        furhat.ask(q.questions.get(i).text)
     }
     onResponse<Yes> { 
         terminate(true)
@@ -81,10 +91,9 @@ val YesNoQuestion : State = state(Interaction){
 
 val MultipleChoiceQuestion: State = state(Interaction){
     onEntry {
-        furhat.ask(q.questions.get(i).msg)
+        furhat.ask(q.questions.get(i).text)
     }
     onResponse<Numeric> { 
         terminate(it.intent.number)
     }
-
 }
