@@ -35,7 +35,9 @@ val Start : State = state(Interaction) {
         }
 
         var n = q.questions.count()
-        furhat.askYN("I'm going to ask you $n questions. Do you want to start?"){
+        var word = "question"
+        if (n > 1) word = "questions"
+        furhat.askYN("I'm going to ask you $n $word. Do you want to start?"){
             onResponse<Yes> {
                 for (question in q.questions){
                     call(NextQuestion)
