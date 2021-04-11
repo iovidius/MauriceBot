@@ -28,8 +28,23 @@ class Quiz {
     var categories = listOf<Category>()
 
     // score per category
-    var scoring = mutableMapOf<Category, Int>()
+    var scoring = mutableMapOf<String, Int>()
 
+    // Evaluate given answers
+    fun evaluate(question: Question, answer: String){
+
+      for (cat in question.scoring) {
+
+        // If the answer is given, update scoring
+        if (answer == cat.answer){
+          
+          var x = scoring.get(cat.category)
+          x?.let{
+            scoring.replace(cat.category, x + cat.score)
+          } 
+        }
+      }
+    }
 
 
     companion object{
@@ -44,7 +59,7 @@ class Quiz {
          
           // initialize categories
           for (c in q.categories){
-            q.scoring.put(c, c.startScore)
+            q.scoring.put(c.name, c.startScore)
           }
          
           println("Loaded questions succesfully!")

@@ -61,7 +61,10 @@ val Stop: State = state(Interaction){
 
         // TODO calculate result
         if (q.giveResult){
-
+            for (item in q.scoring.keys){
+                var value = q.scoring.get(item)
+                println("$item  -  $value")
+            }
         }
 
         furhat.say("Goodbye!")
@@ -82,12 +85,15 @@ val NextQuestion: State = state(Interaction){
            }
         
         
+           var answer: Any? = ""
            // Ask question
            if(x.type == QuestionType.YES_NO)
-               call(YesNoQuestion)
+                answer = call(YesNoQuestion)
            else if(x.type == QuestionType.MULTIPLE_CHOICE)
-               call(MultipleChoiceQuestion)
+                answer = call(MultipleChoiceQuestion)
 
+            
+            q.evaluate(x, answer.toString())
             terminate()
     }
 }
@@ -97,11 +103,11 @@ val YesNoQuestion : State = state(Interaction){
         furhat.ask(q.questions.get(i).text)
     }
     onResponse<Yes> { 
-        terminate(true)
+        terminate("yes")
     }
 
     onResponse<No> { 
-        terminate(false)
+        terminate("no")
     }
 }
 
@@ -118,6 +124,6 @@ val MultipleChoiceQuestion: State = state(Interaction){
             reentry()
         }
 
-        terminate(it.intent.number)
+        terminate(it.intent.number.toString())
     }
 }
