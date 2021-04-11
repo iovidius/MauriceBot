@@ -1,0 +1,108 @@
+{
+	"name": "Corona test",
+	"version": "2.0",
+	"remarks": "Based on https://www.thuisarts.nl/vragentest/corona",
+	"give_results": true,
+	"questions": [
+		{
+			"text": "Do you have a cold?",
+			"type": "YES_NO",
+			"scoring": [{
+				"answer": "yes",
+				"category":"NO-CORONA",
+				"score": 0
+			}]
+		},
+		{
+			"text": "Do you have a sore throat?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Do you sneeze or cough more frequently?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Do you suddenly smell or taste less good?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Do you have a temperature (37.5 degrees or higher)?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Do you have a fever (38 degrees or higher)?",
+			"type": "YES_NO",
+			"scoring": 5
+		},
+		{
+			"text": "Do you have more difficulty breathing when you are sitting or lying quietly?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Are you exhausted after little exertion (for example walking to the toilet)?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Are you breathing faster or more difficult?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Are you feeling more and more ill or were you feeling better at first, but now much sicker or very tired?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Are you over 70 years old?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+		{
+			"text": "Do you have less of an immune system, for example due to a serious illness or medicines that inhibit the immune system?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+
+		{
+			"text": "Do you have heart disease or lung disease for which you are being treated by a specialist? ",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+
+		{
+			"text": "Do you have kidney disease that requires dialysis?",
+			"type": "YES_NO",
+			"scoring": 1
+		},
+
+		{
+			"text": "Are you very overweight?",
+			"type": "YES_NO",
+			"scoring": 1
+		}
+
+
+	],
+	
+	"results": [
+		{
+			"category": "NO-CORONA",
+			"content": "There is very little chance you have corona.",
+			"start_score": 0
+		},
+		{
+			"category": "NO-CORONA-CAUTIOUS",
+			"content": "There is very little chance you have corona. You are, however, more likely to get sick.",
+			"start_score": 0
+		}
+		
+	
+	]
+	
+}

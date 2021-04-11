@@ -8,7 +8,6 @@ import java.nio.file.Paths
 import java.lang.reflect.Type
 
 
-
 // This class describes the set of questions
 
 class Quiz {
@@ -25,13 +24,16 @@ class Quiz {
     // questions
     var questions = listOf<Question>()
 
-   // init {
-    //  questions = listOf(Question("What is love?", QuestionType.YES_NO),
-    //                        Question("What is the meaning of life?", QuestionType.MULTIPLE_CHOICE))
-   // }
+    @SerializedName("results")
+    var categories = listOf<Category>()
+
+    // score per category
+    var scoring = mutableMapOf<Category, Int>()
+
 
 
     companion object{
+
       // Load file into Quiz object
       fun load(fileName: String) : Quiz{
           
@@ -40,16 +42,14 @@ class Quiz {
           val json = bufferedReader.use { it.readText() }
           val q = Gson().fromJson(json, Quiz::class.java)
          
+          // initialize categories
+          for (c in q.categories){
+            q.scoring.put(c, c.startScore)
+          }
+         
           println("Loaded questions succesfully!")
       
          return q
       }
     }
-
-     //   var q =  Gson().fromJson(filename, Quiz::class.java)
-        //val weatherList: List<Question> = gson.fromJson(stringReader , Array<WeatherObject>::class.java).toList()
-
-        //q.questions = 
-        //return q   
-
 }

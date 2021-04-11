@@ -1,0 +1,57 @@
+{
+	"name": "Hogwart House Test",
+	"version": "1.0",
+	"remarks": "Based on https://www.buzzfeed.com/eleanorbate/accurate-af-sorting-quiz",
+	"give_results": true,
+	"questions": [
+		{
+			"intro": "You've made it to Hogwarts, which means you've already bought a wand from Ollivander's.",
+            "text": "What material is at its core? 1: Phoenix Feather, 2: Dragon Heartstring, 3: Unicorn Hair",
+			"type": "MULTIPLE_CHOICE",
+            "scoring": [
+                {
+				"answer": "1",
+				"category":"slyherin",
+				"score": 1
+			    },
+                {
+                "answer": "2",
+                "category":"gryffindor",
+                "score": 1
+                },
+                {
+                "answer": "3",
+                "category":"ravenclaw",
+                "score": 1
+                }
+            ]
+		}
+	],
+	
+	
+	"results": [
+		{
+			"category": "gryffindor",
+			"content": "You're most likely to be Gryffindor.",
+			"start_score": 0
+		},
+		{
+			"category": "slytherin",
+			"content": "You're most likely to be Slytherin.",
+			"start_score": 0
+		},
+        {
+			"category": "ravenclaw",
+			"content": "You're most likely to be Ravenclaw.",
+			"start_score": 0
+		},
+		{
+			"category": "huffelpuff",
+			"content": "You're most likely to be Huffelpuff.",
+			"start_score": 0
+		}
+		
+	
+	]
+	
+}
