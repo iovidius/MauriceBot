@@ -67,15 +67,20 @@ val Stop: State = state(Interaction){
             for (item in q.scoring.keys){
                 var value = q.scoring.get(item)
                 value?.let{
-                    catName = if (value > highscore) item else catName
+                    if (value > highscore){
+                        catName = item
+                    }
+                }
+            }
+            println("Found $catName at $highscore points")
+            // Look up in category list
+            if (catName.isNotEmpty()){
+                var cat = q.categories.find {it.name == catName}
+                cat?.let{
+                    furhat.say(cat.content)
                 }
             }
 
-            // Look up in category list
-            var cat = q.categories.find {it.name == catName}
-            cat?.let{
-                furhat.say(cat.content)
-            }
         }
 
         furhat.say("Goodbye!")
