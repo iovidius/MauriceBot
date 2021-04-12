@@ -8,6 +8,7 @@ import java.io.IOException
 
 import Quiz
 import Question
+import org.junit.experimental.categories.Category
 
 var q : Quiz = Quiz()    // new Quiz
 var i = 0                // Question index
@@ -59,11 +60,21 @@ val Stop: State = state(Interaction){
         if (i > 0)
             furhat.say("Thanks for answering all questions!")
 
-        // TODO calculate result
+        // calculate result
         if (q.giveResult){
+            var highscore = 0
+            var catName = ""
             for (item in q.scoring.keys){
                 var value = q.scoring.get(item)
-                println("$item  -  $value")
+                value?.let{
+                    catName = if (value > highscore) item else catName
+                }
+            }
+
+            // Look up in category list
+            var cat = q.categories.find {it.name == catName}
+            cat?.let{
+                furhat.say(cat.content)
             }
         }
 
