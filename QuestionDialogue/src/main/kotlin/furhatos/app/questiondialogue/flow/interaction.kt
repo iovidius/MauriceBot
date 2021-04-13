@@ -110,6 +110,8 @@ val NextQuestion: State = state(Interaction){
                 answer = call(YesNoQuestion)
            else if(x.type == QuestionType.MULTIPLE_CHOICE)
                 answer = call(MultipleChoiceQuestion)
+            else if (x.type == QuestionType.LIKERT)
+                answer = call(LikertQuestion)
 
             
             q.evaluate(x, answer.toString())
@@ -141,6 +143,25 @@ val MultipleChoiceQuestion: State = state(Interaction){
         if (!q.questions.get(i).text.contains("$j:")){
             furhat.say("$j is not an option.")
             reentry()
+        }
+
+        terminate(it.intent.number.toString())
+    }
+}
+
+val LikertQuestion: State = state(Interaction){
+    onEntry {
+        furhat.ask(q.questions.get(i).text)
+    }
+    onResponse<Numeric> { 
+        var j = it.intent.number?.value
+        
+        j?.let{
+            // very rudimentary way of checking that the option is there
+            if (j > q.likert || j < 1){
+                furhat.say("$j is not an option.")
+                reentry()
+            }
         }
 
         terminate(it.intent.number.toString())

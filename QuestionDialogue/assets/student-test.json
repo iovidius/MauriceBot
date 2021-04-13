@@ -3,6 +3,7 @@
 	"version": "1.0",
 	"remarks": "Find out what type of student you are!",
 	"give_results": true,
+    "likert": 5,
 	"questions": [
 		{
 			"text": "What do you like to do most on a free day? 1: Outdoor sports, 2: Grab some drinks with friends, 3: Netflix, 4: Preparing on the next assignment",

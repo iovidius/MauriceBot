@@ -16,6 +16,8 @@ class Quiz {
     val name: String = ""
     val version: String = ""
     val remarks: String = ""
+
+    val likert: Int = 5
     
     // Does the Quiz return a result?
     @SerializedName("give_results") 
