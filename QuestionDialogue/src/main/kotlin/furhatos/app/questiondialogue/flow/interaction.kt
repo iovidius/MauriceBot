@@ -65,10 +65,11 @@ val Stop: State = state(Interaction){
             var highscore = 0
             var catName = ""
             for (item in q.scoring.keys){
-                var value = q.scoring.get(item)
-                value?.let{
-                    if (value > highscore){
+                var score = q.scoring.get(item)
+                score?.let{
+                    if (score > highscore){
                         catName = item
+                        highscore = score
                     }
                 }
             }

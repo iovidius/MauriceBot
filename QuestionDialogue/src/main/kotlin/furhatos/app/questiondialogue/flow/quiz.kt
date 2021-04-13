@@ -33,14 +33,17 @@ class Quiz {
     // Evaluate given answers
     fun evaluate(question: Question, answer: String){
 
-      for (cat in question.scoring) {
+      for (s in question.scoring) {
 
         // If the answer is given, update scoring
-        if (answer == cat.answer){
+        if (answer == s.answer){
           
-          var x = scoring.get(cat.category)
-          x?.let{
-            scoring.replace(cat.category, x + cat.score)
+          var currentScore = scoring.get(s.category)
+          currentScore?.let{
+            var q = currentScore + s.score
+            var r = s.category
+            println("updating $r from $currentScore to $q")
+            scoring.replace(s.category, currentScore + s.score)
           } 
         }
       }

@@ -127,6 +127,11 @@
 	],
 	
     "results": [
+        {
+			"category": "JUGGLER",
+			"content": "You like to maintain a healthy combination of partying, playing sports and (of course) studying! Like a juggler, one could say. ",
+			"start_score": 1
+		},
 		{
 			"category": "PARTY",
 			"content": "You're a classic party animal! You won't go to bed before twelve o'clock and are always up for a game of beer pong. Cheers!",
@@ -141,11 +146,6 @@
 			"category": "ATHLETE",
 			"content": "You're a student of the sporty type! Whether you row, play soccer or do something else, you always place sports on the first place. Stay fit!",
 			"start_score": 0
-		},
-		{
-			"category": "JUGGLER",
-			"content": "You like to maintain a healthy combination of partying, playing sports and (of course) studying! Like a juggler, one could say. ",
-			"start_score": 1
 		}
 	]
 	
