@@ -1,0 +1,24 @@
+{
+	"name": "Evaluation",
+	"version": "1.0",
+	"remarks": "For evaluating the software (itself)",
+	"give_results": false,
+	"questions": [
+		{
+            "intro": "The questions will be about feedback on this system. All questions hereafter will be on a scale from 1 to 5. One meaning the least, and five meaning the most.",
+			"text": "On a scale from 1 to 5, how useful was I?",
+			"type": "LIKERT"
+		},
+		{
+			"text": "On a scale of 1 to 5, how clear were the questions?",
+			"type": "LIKERT"
+		},
+        {
+			"text": "On a scale of 1 to 5, how comfortable did you feel answering the questions?",
+			"type": "LIKERT"
+		}
+	],
+	
+	"results": []
+	
+}
