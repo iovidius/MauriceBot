@@ -16,7 +16,7 @@ var i = 0                // Question index
 
 val Start : State = state(Interaction) {
     onEntry {
-        
+        dialogLogger.startSession()
         furhat.say("Hi there! My name is Maurice.")
 
         // load quiz
@@ -38,7 +38,8 @@ val Start : State = state(Interaction) {
         var n = q.questions.count()
         var word = "question"
         if (n > 1) word = "questions"
-        furhat.askYN("I'm going to ask you $n $word. Do you want to start?"){
+        furhat.say("I'm going to ask you $n $word.")
+        furhat.askYN("Do you want to start?"){
             onResponse<Yes> {
                 for (question in q.questions){
                     call(NextQuestion)
@@ -85,6 +86,7 @@ val Stop: State = state(Interaction){
         }
 
         furhat.say("Goodbye!")
+        dialogLogger.endSession()
         terminate()
     }
 }
