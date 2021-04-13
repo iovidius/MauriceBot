@@ -21,7 +21,7 @@ val Start : State = state(Interaction) {
 
         // load quiz
         try{
-            q = Quiz.load("../../assets/hogwarts.json")
+            q = Quiz.load("../../assets/student-test.json")
         }
          catch (ioException: IOException) {
             ioException.printStackTrace()

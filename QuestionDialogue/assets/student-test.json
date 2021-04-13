@@ -1,0 +1,152 @@
+{
+	"name": "Student quiz",
+	"version": "1.0",
+	"remarks": "Find out what type of student you are!",
+	"give_results": true,
+	"questions": [
+		{
+			"text": "What do you like to do most on a free day? 1: Outdoor sports, 2: Grab some drinks with friends, 3: Netflix, 4: Preparing on the next assignment",
+			"type": "MULTIPLE_CHOICE",
+            "scoring": [
+                {
+				"answer": "1",
+				"category":"ATHLETE",
+				"score": 1
+			    },
+                {
+                "answer": "2",
+                "category":"PARTY",
+                "score": 1
+                },
+                {
+                "answer": "3",
+                "category":"JUGGLER",
+                "score": 1
+                },
+                {
+                "answer": "4",
+                "category":"STUDY",
+                "score": 1
+                }
+            ]
+		},
+		{
+			"text": "Do you like to sport?",
+			"type": "YES_NO",
+            "scoring": [
+                {
+                "answer":"no",
+                "category": "ATHLETE",
+                "score": -2
+                }
+            ]
+		},
+        {
+			"text": "What would be the reason to go abroad for studies? 1: Meeting new people, 2: Good for my resume, 3: Because of a sports scholarship, 4: Great for personal development",
+			"type": "MULTIPLE_CHOICE",
+            "scoring": [
+                {
+				"answer": "1",
+				"category":"PARTY",
+				"score": 1
+			    },
+                {
+                "answer": "2",
+                "category":"STUDY",
+                "score": 1
+                },
+                {
+                "answer": "3",
+                "category":"ATHLETE",
+                "score": 1
+                },
+                {
+                "answer": "4",
+                "category":"JUGGLER",
+                "score": 1
+                }
+            ]
+		},
+        {
+			"text": "When was the last time you were drunk? 1: I don't drink, 2: Last week, 3: Last month (or longer), 4: Yesterday",
+			"type": "MULTIPLE_CHOICE",
+            "scoring": [
+                {
+				"answer": "1",
+				"category":"STUDY",
+				"score": 1
+			    },
+                {
+                "answer": "1",
+                "category":"ATHLETE",
+                "score": 1
+                },
+                {
+                "answer": "2",
+                "category":"PARTY",
+                "score": 1
+                },
+                {
+                "answer": "3",
+                "category":"JUGGLER",
+                "score": 1
+                },
+                {
+                "answer": "4",
+                "category":"PARTY",
+                "score": 2
+                }
+            ]
+		},
+        {
+			"text": "Are you a member of a students association? 1: Yes, a sports club, 2: Yes, a traditional student association, 3: Yes, I'm an active member of a study association, 4: No",
+			"type": "MULTIPLE_CHOICE",
+            "scoring": [
+                {
+				"answer": "1",
+				"category":"ATHLETE",
+				"score": 1
+			    },
+                {
+                "answer": "2",
+                "category":"PARTY",
+                "score": 1
+                },
+                {
+                "answer": "3",
+                "category":"JUGGLER",
+                "score": 1
+                },
+                {
+                "answer": "4",
+                "category":"STUDY",
+                "score": 1
+                }
+            ]
+		}
+	],
+	
+    "results": [
+		{
+			"category": "PARTY",
+			"content": "You're a classic party animal! You won't go to bed before twelve o'clock and are always up for a game of beer pong. Cheers!",
+			"start_score": 0
+		},
+		{
+			"category": "STUDY",
+			"content": "You're the student that actually likes studying! You're favourite spot on campus is the library, and you plan to graduate with honours. Make sure you get enough sleep!",
+			"start_score": 0
+		},
+        {
+			"category": "ATHLETE",
+			"content": "You're a student of the sporty type! Whether you row, play soccer or do something else, you always place sports on the first place. Stay fit!",
+			"start_score": 0
+		},
+		{
+			"category": "JUGGLER",
+			"content": "You like to maintain a healthy combination of partying, playing sports and (of course) studying! Like a juggler, one could say. ",
+			"start_score": 1
+		}
+	]
+	
+}
