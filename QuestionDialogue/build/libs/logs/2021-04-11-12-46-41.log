@@ -1,0 +1,43 @@
+12:46:41 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.187:1932
+12:46:42 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+12:46:43 [QuestiondialogueSkill] ERROR StateRunner:186 - com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+12:46:43 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:226)
+	at com.google.gson.Gson.fromJson(Gson.java:932)
+	at com.google.gson.Gson.fromJson(Gson.java:897)
+	at com.google.gson.Gson.fromJson(Gson.java:846)
+	at com.google.gson.Gson.fromJson(Gson.java:817)
+	at Quiz$Companion.load(quiz.kt:30)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:17)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:386)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:215)
+	... 15 more
+java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:386)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:215)
+	at com.google.gson.Gson.fromJson(Gson.java:932)
+	at com.google.gson.Gson.fromJson(Gson.java:897)
+	at com.google.gson.Gson.fromJson(Gson.java:846)
+	at com.google.gson.Gson.fromJson(Gson.java:817)
+	at Quiz$Companion.load(quiz.kt:30)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:17)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+

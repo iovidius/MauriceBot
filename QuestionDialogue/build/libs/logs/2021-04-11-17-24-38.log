@@ -1,0 +1,23 @@
+17:24:38 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.187:1932
+17:24:39 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+17:24:42 [QuestiondialogueSkill] ERROR StateRunner:186 - java.lang.IllegalArgumentException: class Quiz declares multiple JSON fields named results
+17:24:42 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - java.lang.IllegalArgumentException: class Quiz declares multiple JSON fields named results
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:172)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:102)
+	at com.google.gson.Gson.getAdapter(Gson.java:458)
+	at com.google.gson.Gson.fromJson(Gson.java:931)
+	at com.google.gson.Gson.fromJson(Gson.java:897)
+	at com.google.gson.Gson.fromJson(Gson.java:846)
+	at com.google.gson.Gson.fromJson(Gson.java:817)
+	at Quiz$Companion.load(quiz.kt:43)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:23)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+

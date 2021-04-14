@@ -1,0 +1,16 @@
+14:30:11 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.187:1932
+14:30:12 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+14:30:15 [QuestiondialogueSkill] ERROR StateRunner:186 - java.lang.ClassCastException: Question cannot be cast to java.util.List
+14:30:15 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - java.lang.ClassCastException: Question cannot be cast to java.util.List
+	at Quiz$Companion.load(quiz.kt:40)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:22)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+

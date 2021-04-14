@@ -1,0 +1,19 @@
+12:31:40 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.178.34:1932
+12:31:40 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+12:31:46 [QuestiondialogueSkill] WARN  JsonDialogLogger:373 - The directory provided does not end with a trailing directory separator: 
+12:31:49 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - java.io.FileNotFoundException: C:\Users\josjr\ownCloud\UT\2A\Conversational Agents\Assignment 4\Maurice\MauriceBot\QuestionDialogue\build\libs\quizzes\main.json (Het systeem kan het opgegeven bestand niet vinden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at Quiz$Companion.load(quiz.kt:61)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:24)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+

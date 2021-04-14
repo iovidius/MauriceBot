@@ -1,0 +1,40 @@
+13:23:15 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.1.187:1932
+13:23:15 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+13:23:18 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - java.io.FileNotFoundException: assets\test.json (Het systeem kan het opgegeven pad niet vinden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at Quiz$Companion.load(quiz.kt:33)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt:22)
+	at furhatos.app.questiondialogue.flow.InteractionKt$Start$1$1.invoke(interaction.kt)
+	at furhatos.flow.kotlin.StateRunner.runEntryTrigger(StateRunner.kt:180)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:65)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+
+13:28:41 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - Exception in thread "EventSystem" java.lang.NoClassDefFoundError: furhatos/event/senses/SenseUserLeave$Builder
+	at furhatos.skills.SimpleEngagementPolicy.sendSenseLeave(SimpleEngagementPolicy.kt:68)
+	at furhatos.skills.SimpleEngagementPolicy.checkEngagement(SimpleEngagementPolicy.kt:52)
+	at furhatos.skills.UserManager.reactToSenseUsers(UserManager.kt:271)
+	at furhatos.skills.UserManager.access$reactToSenseUsers(UserManager.kt:26)
+	at furhatos.skills.UserManager$onEvent$1.invoke(UserManager.kt:192)
+	at furhatos.skills.UserManager$onEvent$1.invoke(UserManager.kt:26)
+	at furhatos.skills.UserManager$sam$java_util_function_Consumer$0.accept(UserManager.kt)
+	at furhatos.event.Event.match(Event.java:146)
+	at furhatos.skills.UserManager.onEvent(UserManager.kt:192)
+	at furhatos.event.EventSystem.distributeInternal(EventSystem.java:128)
+	at furhatos.event.EventSystem.distributeNextEvent(EventSystem.java:252)
+	at furhatos.event.EventSystem.runUntilStopped(EventSystem.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: furhatos.event.senses.SenseUserLeave$Builder
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 13 more
+
+13:29:43 [Broker Client] ERROR BrokerClient:152 - Unexpected disconnect from broker
