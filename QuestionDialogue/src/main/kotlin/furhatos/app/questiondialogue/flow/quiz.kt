@@ -21,7 +21,7 @@ class Quiz {
     
     // Does the Quiz return a result?
     @SerializedName("give_results") 
-    val giveResult: Boolean = false   
+    var giveResult: Boolean = false   
     
     // questions
     var questions = listOf<Question>()

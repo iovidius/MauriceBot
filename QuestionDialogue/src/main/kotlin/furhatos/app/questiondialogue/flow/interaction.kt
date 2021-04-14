@@ -21,7 +21,7 @@ val Start : State = state(Interaction) {
 
         // load quiz
         try{
-            q = Quiz.load("../../assets/evaluation.json")
+            q = Quiz.load("quizzes/main.json")
         }
          catch (ioException: IOException) {
             ioException.printStackTrace()
@@ -49,6 +49,7 @@ val Start : State = state(Interaction) {
             }
 
             onResponse<No> { 
+                q.giveResult = false
                 goto(Stop)
              }
         }
