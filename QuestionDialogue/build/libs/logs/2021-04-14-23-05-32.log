@@ -1,0 +1,28 @@
+23:05:32 [Skill] INFO  Skill:139 - Connecting to Furhat server on 192.168.178.34:1932
+23:05:33 [QuestiondialogueSkill] INFO  QuestiondialogueSkill:166 - Starting skill
+23:05:35 [QuestiondialogueSkill] ERROR InitRunner: 28 - java.lang.NullPointerException
+23:05:35 [ErrorLoggingThread] ERROR QuestiondialogueSkill:459 - java.lang.NullPointerException
+	at furhatos.skills.FurhatSpeech.getVoices(FurhatSpeech.java:294)
+	at furhatos.skills.FurhatEventWrapper.getVoices(FurhatEventWrapper.java:31)
+	at furhatos.skills.FurhatSpeech.getVoice(FurhatSpeech.java:303)
+	at furhatos.skills.FurhatEventWrapper.getVoice(FurhatEventWrapper.java:31)
+	at furhatos.skills.FurhatSpeech.setVoiceAndInputLanguage(FurhatSpeech.java:283)
+	at furhatos.skills.FurhatEventWrapper.setVoiceAndInputLanguage(FurhatEventWrapper.java:31)
+	at furhatos.flow.kotlin.Furhat.setVoice(Furhat.kt:731)
+	at furhatos.flow.kotlin.Furhat.internalSetVoice(Furhat.kt:752)
+	at furhatos.flow.kotlin.Furhat.setVoice(Furhat.kt:767)
+	at furhatos.flow.kotlin.Furhat.setVoice$default(Furhat.kt:765)
+	at furhatos.app.questiondialogue.flow.GeneralKt$Idle$1$1.invoke(general.kt:9)
+	at furhatos.app.questiondialogue.flow.GeneralKt$Idle$1$1.invoke(general.kt)
+	at furhatos.flow.kotlin.InitRunner.run(InitRunner.kt:25)
+	at furhatos.flow.kotlin.StateRunner.runInitTrigger(StateRunner.kt:215)
+	at furhatos.flow.kotlin.StateRunner.run(StateRunner.kt:64)
+	at furhatos.flow.kotlin.Flow.tailRecRun(Flow.kt:146)
+	at furhatos.flow.kotlin.Flow.run(Flow.kt:110)
+	at furhatos.app.questiondialogue.QuestiondialogueSkill.start(main.kt:9)
+	at furhatos.skills.Skill.initializeSkill(Skill.java:169)
+	at furhatos.skills.Skill.lambda$startSkill$2(Skill.java:227)
+	at java.lang.Thread.run(Thread.java:748)
+
+23:05:53 [QuestiondialogueSkill] WARN  JsonDialogLogger:373 - The directory provided does not end with a trailing directory separator: 
+23:09:31 [EventSystem] INFO  QuestiondialogueSkill:184 - Terminating skill
